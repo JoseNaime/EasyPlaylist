@@ -3,11 +3,13 @@ import React from 'react';
 
 export class Track extends React.Component {
     render() {
+        console.log(this.props.track)
         return(
             <div className="Track">
+
                 <div className="Track-information">
-                    <h3> {/*track name will go here*/}</h3>
-                    <p>{/* track name will go here*/} | {/* track album will go here*/}</p>
+                    <h3> {this.props.track.artist}</h3>
+                    <p>{this.props.track.name} | {this.props.track.album}</p>
                 </div>
                 <button className="Track-action">{/* + or - will go here */}</button>
             </div>
