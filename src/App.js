@@ -4,12 +4,12 @@ import {SearchBar} from "./Components/SearchBar/SearchBar";
 import {SearchResult} from "./Components/SearchResult/SearchResult";
 import {PlayList} from "./Components/PlayList/PlayList"
 
-class App extends React.Component {
+export class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchResults: [
-                {
+            playlistName: '',
+            searchResults: [{
                     id: 1,
                     name: 'Name 1',
                     artist: 'Artist 1',
@@ -20,8 +20,30 @@ class App extends React.Component {
                     name: 'Name 2',
                     artist: 'Artist 2',
                     album: 'Album 2'
-                }
-            ]
+                },
+                {
+                    id: 3,
+                    name: 'Name 3',
+                    artist: 'Artist 3',
+                    album: 'Album 3'
+                }],
+            playlistTracks: []
+        };
+
+        this.addTrack = this.addTrack.bind(this);
+        this.deleteTrack = this.deleteTrack.bind(this);
+    }
+
+    addTrack(track) {
+        if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+            return;
+        }
+        this.setState({playlistTracks: [...this.state.playlistTracks,track]})
+    }
+
+    deleteTrack(track) {
+       if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+            this.setState({playlistTracks: this.state.playlistTracks.filter(item => item.id !== track.id )})
         }
     }
 
@@ -32,13 +54,11 @@ class App extends React.Component {
                 <div className="App">
                     <SearchBar/>
                     <div className="App-playlist">
-                        <SearchResult searchResults={this.state.searchResults}/>
-                        <PlayList/>
+                        <SearchResult searchResults={this.state.searchResults} onAdd={this.addTrack} onDelete={this.deleteTrack}/>
+                        <PlayList playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onAdd={this.addTrack} onDelete={this.deleteTrack}/>
                     </div>
                 </div>
             </div>
         );
     }
 }
-
-export default App;
