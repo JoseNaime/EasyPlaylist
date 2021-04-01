@@ -1,5 +1,5 @@
 const clientId = 'ec0940782c8a4fd0b3f65ecd834f8daa'
-const redirectUri = 'https://josenjamming.netlify.app';
+const redirectUri = 'https://easyplaylist.netlify.app';
 const spotifyUrl = `https://accounts.spotify.com/authorize?response_type=token&scope=playlist-modify-public&client_id=${clientId}&redirect_uri=${redirectUri}`;
 let accessToken = undefined;
 let expiresIn = undefined;
