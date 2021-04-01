@@ -11,7 +11,7 @@ export class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playlistName: '',
+            playlistName: 'NewPlaylist',
             searchResults: [],
             playlistTracks: []
         };
@@ -27,8 +27,10 @@ export class App extends React.Component {
         Spotify.search(term)
             .then(searchResults => {
                 this.setState({
-                searchResults: searchResults
-            })});
+                    searchResults: searchResults
+                })
+            });
+
     }
 
     addTrack(track) {
@@ -45,7 +47,15 @@ export class App extends React.Component {
     }
 
     savePlaylist() {
-        const tracksURIs = this.state.playlistTracks.filter(track => track['uri'])
+        const tracksURIs = this.state.playlistTracks.map(track => track.uri)
+        Spotify.savePlaylist(this.state.playlistName, tracksURIs)
+            .then(res => {
+                if (res.ok) {
+                    alert('Playlist successfully added, refresh your Spotify Playlist to se changes, Enjoy !!')
+                } else {
+                    alert('Something went wrong, try again later... :(')
+                }
+            });
     }
 
     updatePlaylistName(name) {
