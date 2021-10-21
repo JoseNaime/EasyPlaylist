@@ -15,7 +15,7 @@ here's an example:
 [![Easy Playlist](http://i3.ytimg.com/vi/j0JHf9uuo0g/maxresdefault.jpg)](https://youtu.be/j0JHf9uuo0g "Easy Playlist")
 
 ### Result
-<img width="1280" alt="Screen Shot 2021-09-21 at 9 00 27 a m" src="https://user-images.githubusercontent.com/34799483/134184772-ab433dc7-ef84-4bc5-b227-9f8fb05f56f5.png">
+![Easy Playlist](https://user-images.githubusercontent.com/34799483/134184772-ab433dc7-ef84-4bc5-b227-9f8fb05f56f5.png)
 
 ## Support
 If you need some help or suggestion, you can send it to: **josep.naimeg@gmail.com**
