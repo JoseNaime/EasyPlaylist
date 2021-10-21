@@ -12,7 +12,8 @@ To use this extension you just need to:
  - Save it and enjoy!
 here's an example:
 
-https://user-images.githubusercontent.com/34799483/134184634-1cf4cfaf-7ebb-431e-97da-4ab951957cb4.mov
+[![Easy Playlist](http://i3.ytimg.com/vi/j0JHf9uuo0g/maxresdefault.jpg)](https://youtu.be/j0JHf9uuo0g "Easy Playlist")
+
 ### Result
 <img width="1280" alt="Screen Shot 2021-09-21 at 9 00 27 a m" src="https://user-images.githubusercontent.com/34799483/134184772-ab433dc7-ef84-4bc5-b227-9f8fb05f56f5.png">
 
